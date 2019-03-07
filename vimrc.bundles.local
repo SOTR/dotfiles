@@ -1,1 +1,2 @@
 Bundle 'vim-ctrlspace/vim-ctrlspace'
+Bundle 'joshdick/onedark.vim'
