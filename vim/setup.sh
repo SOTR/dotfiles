@@ -21,14 +21,16 @@ sync_repo() {
     local repo_branch="$3"
     local repo_name="$4"
 
-    echo "Trying to update $repo_name"
+    echo "Trying to update $repo_name in $repo_path"
 
     if [ ! -e "$repo_path" ]; then
+        echo "Trying to clone repo $repo_uri in $repo_path"
         mkdir -p "$repo_path"
         git clone -b "$repo_branch" "$repo_uri" "$repo_path"
         ret="$?"
         echo "Successfully cloned $repo_name."
     else
+        echo "Trying to update repo in $repo_path"
         cd "$repo_path" && git pull origin "$repo_branch"
         ret="$?"
         echo "Successfully updated $repo_name"
