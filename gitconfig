@@ -1,0 +1,15 @@
+[color]
+    ui = true
+[user]
+    email = svenemme@gmail.com
+    name = Sven Emme
+[alias]
+    log = log --name-status
+[core]
+    autocrlf = false
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
+
