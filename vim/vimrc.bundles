@@ -215,6 +215,11 @@
             Bundle 'pangloss/vim-javascript'
             Bundle 'briancollins/vim-jst'
             Bundle 'kchmck/vim-coffee-script'
+            Bundle 'prettier/prettier'
+            Bundle 'w0rp/ale'
+            " Bundle 'leshill/vim-json'
+            Bundle 'mxw/vim-jsx'
+            Bundle 'moll/vim-node'
         endif
     " }
 

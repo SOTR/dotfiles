@@ -1,2 +1,6 @@
 Bundle 'vim-ctrlspace/vim-ctrlspace'
 Bundle 'joshdick/onedark.vim'
+Bundle 'vim-windowswap'
+Bundle 'junegunn/fzf.vim'
+Plugin 'skywind3000/asyncrun.vim'
+
