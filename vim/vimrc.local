@@ -12,6 +12,13 @@ set nocursorline
 
 let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 
+" Replace glob command for control space to ignore .gitignore files and .git folders
+" but still show hidden files like .bablelrc or .gitignore
+
+if executable("ag")
+	let g:CtrlSpaceGlobCommand = 'ag -l --hidden --ignore .git --nocolor -g ""'
+endif 
+
 " enable/disable enhanced tabline. (c) >
 " let g:airline#extensions#tabline#enabled = 1
 
