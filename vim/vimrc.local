@@ -7,6 +7,9 @@ set hidden
 
 set showtabline=0
 
+" deactivate highlighting of cursorline because of performance issues
+set nocursorline
+
 let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 
 " enable/disable enhanced tabline. (c) >
