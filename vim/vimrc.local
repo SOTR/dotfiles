@@ -44,3 +44,53 @@ let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
 let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
 let g:CtrlSpaceSaveWorkspaceOnExit = 1
 let g:CtrlSpaceIgnoredFiles = '\v.*\.(so|o|apk)$'
+
+"activate deoplete
+let g:deoplete#enable_at_startup = 1
+
+" deactivate parentheses after function name
+let g:autocomplete_flow#insert_paren_after_function = 0
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" tern
+"autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+
+" Examples:
+" Sample configuration for dictionary source with multiple
+" dictionary files.
+setlocal dictionary+=/usr/share/dict/words
+setlocal dictionary+=/usr/share/dict/american-english
+" Remove this if you'd like to use fuzzy search
+call deoplete#custom#source(
+\ 'dictionary', 'matchers', ['matcher_head'])
+" If dictionary is already sorted, no need to sort it again.
+call deoplete#custom#source(
+\ 'dictionary', 'sorters', [])
+" Do not complete too short words
+call deoplete#custom#source(
+\ 'dictionary', 'min_pattern_length', 4)
+
+
+		" Using custom variables to configure values
+		" - range_above = Search for words N lines above.
+		" - range_below = Search for words N lines below.
+		" - mark_above = Mark shown for words N lines above.
+		" - mark_below = Mark shown for words N lines below.
+		" - mark_changes = Mark shown for words in the changelist.
+		call deoplete#custom#var('around', {
+		\   'range_above': 15,
+		\   'range_below': 15,
+		\   'mark_above': '[↑]',
+		\   'mark_below': '[↓]',
+		\   'mark_changes': '[*]',
+		\})
+
+let g:deoplete#auto_completion_start_length = 2
+
+" Change clang binary path
+call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
+
+" Change clang options
+call deoplete#custom#var('clangx', 'default_c_options', '')
+call deoplete#custom#var('clangx', 'default_cpp_options', '')
