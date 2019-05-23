@@ -50,6 +50,10 @@ let g:CtrlSpaceIgnoredFiles = '\v.*\.(so|o|apk)$'
 "activate deoplete
 let g:deoplete#enable_at_startup = 1
 
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+
 " deactivate parentheses after function name
 let g:autocomplete_flow#insert_paren_after_function = 0
 
@@ -96,3 +100,13 @@ call deoplete#custom#var('clangx', 'clang_binary', '/usr/bin/clang')
 " Change clang options
 call deoplete#custom#var('clangx', 'default_c_options', '')
 call deoplete#custom#var('clangx', 'default_cpp_options', '')
+
+
+
+call deoplete#custom#var('omni', 'input_patterns', {
+		\ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+		\ 'java': '[^. *\t]\.\w*',
+		\ 'php': '\w+|[^. \t]->\w*|\w+::\w*',
+		\ 'javascript': '[^. *\t]\.\w*', 
+		\})
+
