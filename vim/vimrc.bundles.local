@@ -1,3 +1,12 @@
+ " auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+
 Bundle 'vim-ctrlspace/vim-ctrlspace'
 Bundle 'joshdick/onedark.vim'
 Bundle 'wesQ3/vim-windowswap'
@@ -23,3 +32,16 @@ Bundle 'Shougo/deoplete-clangx'
   " For func argument completion
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+
+call plug#begin('~/.vim/plugged')
+ " Language server for deoplete
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+call plug#end()
