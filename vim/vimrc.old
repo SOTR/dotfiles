@@ -9,7 +9,6 @@ Plug 'dag/vim-fish'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-commentary'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-fugitive'
@@ -133,11 +132,6 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#enabled = 1
 set noshowmode
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-
-"Nerdtree
-map <leader>n :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
 
 "Save and restore session
 map <F2> :mksession! ~/vim_session <cr> " Quick write session with F2

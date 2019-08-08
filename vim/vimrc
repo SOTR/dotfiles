@@ -510,15 +510,6 @@
         endif
     " }
 
-    " Misc {
-        if isdirectory(expand("~/.vim/bundle/nerdtree"))
-            let g:NERDShutUp=1
-        endif
-        if isdirectory(expand("~/.vim/bundle/matchit.zip"))
-            let b:match_ignorecase = 1
-        endif
-    " }
-
     " OmniComplete {
         " To disable omni complete, add the following to your .vimrc.before.local file:
         "   let g:spf13_no_omni_complete = 1
@@ -570,23 +561,6 @@
         " Setting the author var
         " If forking, please overwrite in your .vimrc.local file
         let g:snips_author = 'Steve Francia <steve.francia@gmail.com>'
-    " }
-
-    " NerdTree {
-        if isdirectory(expand("~/.vim/bundle/nerdtree"))
-            map <C-e> <plug>NERDTreeTabsToggle<CR>
-            map <leader>e :NERDTreeFind<CR>
-            nmap <leader>nt :NERDTreeFind<CR>
-
-            let NERDTreeShowBookmarks=1
-            let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
-            let NERDTreeChDirMode=0
-            let NERDTreeQuitOnOpen=1
-            let NERDTreeMouseMode=2
-            let NERDTreeShowHidden=1
-            let NERDTreeKeepTreeInNewTab=1
-            let g:nerdtree_tabs_open_on_gui_startup=0
-        endif
     " }
 
     " Tabularize {
@@ -1127,19 +1101,6 @@
     call InitializeDirectories()
     " }
 
-    " Initialize NERDTree as needed {
-    function! NERDTreeInitAsNeeded()
-        redir => bufoutput
-        buffers!
-        redir END
-        let idx = stridx(bufoutput, "NERD_tree")
-        if idx > -1
-            NERDTreeMirror
-            NERDTreeFind
-            wincmd l
-        endif
-    endfunction
-    " }
 
     " Strip whitespace {
     function! StripTrailingWhitespace()
