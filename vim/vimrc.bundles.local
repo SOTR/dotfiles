@@ -7,7 +7,6 @@ endif
 
 
 
-Bundle 'vim-ctrlspace/vim-ctrlspace'
 Bundle 'joshdick/onedark.vim'
 Bundle 'wesQ3/vim-windowswap'
 Bundle 'junegunn/fzf.vim'
