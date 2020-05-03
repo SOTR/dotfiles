@@ -10,17 +10,6 @@ set showtabline=0
 " deactivate highlighting of cursorline because of performance issues
 set nocursorline
 
-let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
-
-let g:CtrlSpaceSearchTiming = 500
-
-" Replace glob command for control space to ignore .gitignore files and .git folders
-" but still show hidden files like .bablelrc or .gitignore
-
-if executable("ag")
-	let g:CtrlSpaceGlobCommand = 'ag -l --hidden --ignore .git --ignore out --ignore .repo --nocolor -g ""'
-endif 
-
 " enable/disable enhanced tabline. (c) >
 " let g:airline#extensions#tabline#enabled = 1
 
@@ -40,12 +29,6 @@ endif
 " enable/disable vim-ctrlspace integration >
 let g:airline#extensions#ctrlspace#enabled = 1
 
-let g:CtrlSpaceStatuslineFunction = "airline#extensions#ctrlspace#statusline()"
-
-" let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-let g:CtrlSpaceSaveWorkspaceOnExit = 1
-let g:CtrlSpaceIgnoredFiles = '\v.*\.(so|o|apk)$'
 
 "activate deoplete
 let g:deoplete#enable_at_startup = 1
