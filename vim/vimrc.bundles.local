@@ -12,34 +12,9 @@ Bundle 'wesQ3/vim-windowswap'
 Bundle 'junegunn/fzf.vim'
 Bundle 'skywind3000/asyncrun.vim'
 
-if has('nvim')
-  Bundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Bundle 'Shougo/deoplete.nvim'
-  Bundle 'roxma/nvim-yarp'
-  Bundle 'roxma/vim-hug-neovim-rpc'
-endif
 
-" deoplete JavaScript
-Bundle 'wokalski/autocomplete-flow'
-" deoplete Vim completion
-Bundle 'Shougo/neco-vim'
-" deoplete neco-syntax completion syntax files like autoload/syntaxcomplete.vim
-Bundle 'Shougo/neco-syntax'
-" Deoplete clang completion
-Bundle 'Shougo/deoplete-clangx'
-  " For func argument completion
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
 
 call plug#begin('~/.vim/plugged')
- " Language server for deoplete
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
