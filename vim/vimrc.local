@@ -35,3 +35,5 @@ let g:airline#extensions#ctrlspace#enabled = 1
 setlocal dictionary+=/usr/share/dict/words
 setlocal dictionary+=/usr/share/dict/american-english
 
+
+let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-python', 'coc-explorer', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-tslint', 'coc-clangd', 'coc-cmake', 'coc-cssmodules', 'coc-eslint', 'coc-git', 'coc-highlight', 'coc-lists', 'coc-snippets']
