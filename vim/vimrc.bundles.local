@@ -16,8 +16,8 @@ Bundle 'skywind3000/asyncrun.vim'
 
 call plug#begin('~/.vim/plugged')
 " (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
