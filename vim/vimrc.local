@@ -29,6 +29,8 @@ set nocursorline
 " enable/disable vim-ctrlspace integration >
 let g:airline#extensions#ctrlspace#enabled = 1
 
+let g:airline_theme='onedark'
+
 " Examples:
 " Sample configuration for dictionary source with multiple
 " dictionary files.
