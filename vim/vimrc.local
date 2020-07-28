@@ -37,3 +37,48 @@ setlocal dictionary+=/usr/share/dict/american-english
 
 
 let g:coc_global_extensions = ['coc-json', 'coc-yaml', 'coc-python', 'coc-explorer', 'coc-css', 'coc-tsserver', 'coc-html', 'coc-tslint', 'coc-clangd', 'coc-cmake', 'coc-cssmodules', 'coc-eslint', 'coc-git', 'coc-highlight', 'coc-lists', 'coc-snippets']
+
+
+" Shortcuts
+" Change Working Directory to that of the current file
+"cmap cwd lcd %:p:h
+"cmap cd. lcd %:p:h
+
+" Custom fzf RG command
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+" " My custom mappings
+
+nmap <space>o :Files<CR>
+nmap <space>b :Buffers<CR>
+nmap <space>s :Gstatus<CR>
+nmap <space>r :RG<CR>
+nmap <space>l :BLines<CR>
+nmap <space>h :Commits<CR>
+nmap <space>c :BCommits<CR>
+
+
+" Fugitive remappings from spf13
+if isdirectory(expand("~/.vim/bundle/vim-fugitive/"))
+  nnoremap <silent> <leader>gs :Gstatus<CR>
+  nnoremap <silent> <leader>gd :Gdiff<CR>
+  nnoremap <silent> <leader>gc :Gcommit<CR>
+  nnoremap <silent> <leader>gb :Gblame<CR>
+  nnoremap <silent> <leader>gl :Glog<CR>
+  nnoremap <silent> <leader>gp :Git push<CR>
+  nnoremap <silent> <leader>gr :Gread<CR>
+  noremap <silent> <leader>gw :Gwrite<CR>
+  nnoremap <silent> <leader>ge :Gedit<CR>
+  " Mnemonic _i_nteractive
+  nnoremap <silent> <leader>gi :Git add -p %<CR>
+  noremap <silent> <leader>gg :SignifyToggle<CR>
+endif
+
